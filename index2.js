@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const dummydata = require("./dummydata");
 const jsonObject = [
   {
@@ -12,7 +13,7 @@ const jsonObject = [
     batch: "EA23",
   },
   {
-    name: "Mahima",
+    name: "Prashant",
     course: "FullStack Developer",
     batch: "EA23",
   },
@@ -20,7 +21,11 @@ const jsonObject = [
 const arr = [];
 
 const app = express();
-// app.use(cors)
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.use(express.json()); //Body Parser
 
